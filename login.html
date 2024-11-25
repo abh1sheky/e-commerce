@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        /* Global reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            background: url('img/login4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10; /* Ensure navbar is above the overlay */
+        }
+
+        .navbar .logo {
+            height: 50px;
+            width: 500px;
+            color: #761f1f;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #2c52ed;
+        }
+
+        .wrapper {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 20; /* Ensure content is above navbar and overlay */
+            max-width: 400px; /* Adjust width as needed */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+        }
+
+        .wrapper header {
+            font-size: 35px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #5372F0; /* Header text color */
+        }
+
+        .wrapper form {
+            margin-bottom: 20px;
+        }
+
+        .wrapper form .field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .wrapper form .field .input-area {
+            position: relative;
+        }
+
+        .wrapper form input[type="text"],
+        .wrapper form input[type="password"] {
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            font-size: 18px;
+            border-radius: 25px; /* Rounded corners */
+            border: none;
+            background-color: rgba(255, 255, 255, 0.9); /* Light background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: box-shadow 0.3s, background-color 0.3s;
+            outline: none;
+        }
+
+        .wrapper form input[type="text"]:focus,
+        .wrapper form input[type="password"]:focus {
+            box-shadow: 0 0 15px rgba(83, 114, 240, 0.7); /* Adjusted shadow on focus */
+            background-color: #fff; /* White background on focus */
+        }
+
+        .wrapper form input[type="submit"] {
+            width: 100%;
+            height: 50px;
+            color: #fff;
+            background: #5372F0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            outline: none;
+        }
+
+        .wrapper form input[type="submit"]:hover {
+            background: #2c52ed;
+        }
+
+        .sign-txt {
+            color: #fff;
+        }
+
+        .sign-txt a {
+            color: #2c52ed;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .sign-txt a:hover {
+            text-decoration: underline;
+            color: #5372F0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="img/logo-transparent-png.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clothing.html">Clothing</a></li>
+            <li><a href="electronics.html">Electronics</a></li>
+        </ul>
+    </div>
+
+    <div class="wrapper">
+        <header>Login</header>
+        <form action="#">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="Email Address">
+                    <i class="icon fas fa-envelope"></i>
+                </div>
+                <div class="error error-txt">Email can't be blank</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" placeholder="Password">
+                    <i class="icon fas fa-lock"></i>
+                </div>
+                <div class="error error-txt">Password can't be blank</div>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <div class="sign-txt">Not yet a member? <a href="#">Signup now</a></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
